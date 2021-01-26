@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.furima-icon {
+.union-icon {
   width: 10vw;
   margin-right: 10vw;
 }
@@ -37,7 +37,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: darkgray;
   padding: 8px;
 }
 

@@ -1,0 +1,93 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      選択肢が広がるマッチングアプリ
+    </h2>
+    <p class='service-explain'>
+      UNIONはだれでもかんたんに繋がれる
+    </p>
+    <p class='service-explain'>
+      マッチングアプリです。
+    </p>
+    <p class='service-explain'>
+      雇用形態にかかわらず、
+    </p>
+    <p class='service-explain'>
+      自分のやりたいことを叶えることで
+    </p>
+    <p class='service-explain'>
+      人生は豊かになります。
+    </p>
+    <p class='service-explain'>
+      まずは、
+    </p>
+    <p class='service-explain'>
+      あなたのやりたいことを叶えるために
+    </p>
+    <p class='service-explain'>
+      選択肢から広げてみませんか？
+    </p>
+  </div>
+  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+
+  <%# プロフィール一覧 %>
+  <div class='profile-contents'>
+    <h2 class='title'>UNION WORKE</h2>
+    <%= link_to '新規投稿プロフィール', "#", class: "subtitle" %>
+    <ul class='profile-lists'>
+
+    <% if @profiles[0] != nil %> 
+      <% @profiles.each do |profile|%> 
+        <li class='list'>
+
+          <%= link_to profile_path(profile.id), method: :get do %>
+          <div class='profile-img-content'>
+            <%= image_tag profile.image, class: "profile-img" %>
+          </div>
+          <div class='profile-info'>
+            <h3 class='profile-name'>
+              <%= profile.user.nickname %> 
+            </h3>
+            <h3 class='profile-name'>
+              <%= profile.profession_name %> 
+            </h3>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+      
+    <% if @profiles.length == 0 %> 
+      <li class='list'>
+      
+        <%= link_to '#' do %>
+        <%= image_tag 'union_logo.png', class: "profile-img" %>
+        <div class='profile-info'>
+          <h3 class='profile-name'>
+            商品を出品してね！
+          </h3>
+          <div class='profile-price'>
+            <span>99999999円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+      
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+</div>
+  <%= link_to( new_profile_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>登録する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer" %>

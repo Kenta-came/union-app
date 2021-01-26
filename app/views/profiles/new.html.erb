@@ -1,0 +1,93 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('union_logo.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">商品の情報を入力</h2>
+    
+    <%= form_with model: @profile, local: true do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+    
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"profile-image"  %>
+        
+      </div>
+    </div>
+    
+    
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <%#= current_user.nickname %>
+      <div class="weight-bold-text">
+        性別
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      
+
+      <div class="weight-bold-text">
+        所属
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:form_id, Form.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      
+
+
+
+
+      <div class="weight-bold-text">
+        職業
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :profession_name, class:"items-text", id:"item-name", placeholder:"職業（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          叶えたいこと、やりたいこと
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :want_to_do, class:"items-text", id:"item-info", placeholder:"叶えたいこと、やりたいことの説明（必須 1,000文字まで）（SNSでの集客、ホームページを作って欲しいなど）例）2010年頃に栃木でパーソナルジムをオープンしました。それに伴いSNSで集客を行いたいのでカメラマンの方を探しています。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          できることの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :can_do_list, class:"items-text", id:"item-info", placeholder:"できることの説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('union_logo.png' , size: '185x50'), "/" %>
+    <p class="inc">
+      ©︎Furima,Inc.
+    </p>
+  </footer>
+</div>
