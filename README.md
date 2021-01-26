@@ -21,7 +21,7 @@
 
 | Column             | Type    | Options     |
 | ------------------ | ------  | ----------- |
-| user_id            | string  | null: false |
+| user_id            | integer | null: false |
 | gender_id          | integer | null: false |
 | profession_name    | string  | null: false |
 | want_to_do         | string  | null: false |
@@ -72,7 +72,7 @@
 
 | Column    | Type    | Options     |
 | --------- | ------- | ----------- |
-| user_id   | string  | null: false |
+| user_id   | integer | null: false |
 | genre_id  | integer | null: false |
 | blog_name | string  | null: false |
 | text      | text    | null: false |
