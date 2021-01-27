@@ -1,0 +1,81 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @profile.user.nickname %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @profile.image, class:"item-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        <%= @profile.form.name %>
+      </span>
+      <span class="item-postage">
+       <%= @profile.profession_name %>
+      </span>
+    </div>
+
+    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <% if user_signed_in? %>
+      <% if current_user.id == @profile.user_id %>
+        <%= link_to 'プロフィールの編集', edit_profile_path, method: :get, class: "item-red-btn" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', profile_path(@profile.id), method: :delete, class:'item-destroy' %>
+      <% else %>  
+        
+        <%#= link_to 'メッセージ',  item_buyers_path(@item.id), class:"item-red-btn"%>
+        
+      <% end %>
+    <% end %>
+
+    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
+    <div class="item-explain-box">
+      <span><%#= @profile.detail %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value"><%= @profile.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">性別</th>
+          <td class="detail-value"><%= @profile.gender.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">所属</th>
+          <td class="detail-value"><%= @profile.form.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">職業</th>
+          <td class="detail-value"><%= @profile.profession_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">やりたいこと</th>
+          <td class="detail-value"><%= @profile.want_to_do %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">できること</th>
+          <td class="detail-value"><%= @profile.can_do_list %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>
