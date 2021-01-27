@@ -19,6 +19,15 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    if @profile.user == current_user
+       @profile.destroy
+    end
+      redirect_to root_path
+  end
+
+  def show
+  end
 
   private
 
