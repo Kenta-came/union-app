@@ -44,16 +44,18 @@
         <li class='list'>
 
           <%= link_to profile_path(profile.id), method: :get do %>
-          <div class='profile-img-content'>
-            <%= image_tag profile.image, class: "profile-img" %>
-          </div>
-          <div class='profile-info'>
-            <h3 class='profile-name'>
-              <%= profile.user.nickname %> 
-            </h3>
-            <h3 class='profile-name'>
-              <%= profile.profession_name %> 
-            </h3>
+          <div class='flex'>
+            <div class='profile-img-content'>
+              <%= image_tag profile.image, class: "profile-img" %>
+            </div>
+            <div class='profile-info'>
+              <h3 class='profile-name'>
+                <%= profile.user.nickname %> 
+              </h3>
+              <h3 class='profile-name'>
+                <%= profile.profession_name %> 
+              </h3>
+            </div>
           </div>
           <% end %>
         </li>
