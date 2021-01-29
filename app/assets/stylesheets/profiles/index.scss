@@ -46,7 +46,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 15vh 5vh 0;
 }
 
 .profile-contents>.title {
@@ -57,21 +57,19 @@ a {
 
 .profile-contents>.subtitle {
   font-size: 3vh;
-  margin: 1vh 0;
+  margin: 4vh 0 10vh;
   text-decoration: none;
   color: darkgray;
   font-weight: bold;
 }
 
 .profile-lists {
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .profile-lists>.list {
-  width: 37vh;
+  width: 80vh;
   padding: 1vw;
   background-color: #FFF;
 }
@@ -82,6 +80,7 @@ a {
 }
 
 .profile-img {
+  border-radius: 50%;
   width: 33vh;
   height: 33vh;
 }
@@ -135,3 +134,7 @@ a {
 }
 
 /* //商品一覧 */
+
+.flex { 
+  display: flex;
+}
