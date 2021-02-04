@@ -1,6 +1,6 @@
 .purchase-btn {
-  width: 120px;
-  background: darkgray;
+  width: 100px;
+  background: #0d0d0d;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -18,5 +18,5 @@
 }
 
 .purchase-btn-icon {
-  width: 60%;
+  width: 40%;
 }

@@ -18,4 +18,13 @@ class RoomsController < ApplicationController
     end
   end
 
+  private
+
+  def profile_params
+    params.require(:profile).permit(:gender_id, :form_id, :profession_name, :want_to_do, :can_do_list, :image,).merge(user_id: current_user.id)
+  end
+
+  def profile_params_id
+    @profile = Profile.find(params[:id])
+  end
 end

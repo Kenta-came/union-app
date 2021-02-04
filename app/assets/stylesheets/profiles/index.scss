@@ -9,6 +9,7 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
+  height: 100vh;
   background-image: image-url('back_image.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,6 +67,7 @@ a {
 .profile-lists {
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
 }
 
 .profile-lists>.list {
@@ -137,4 +139,7 @@ a {
 
 .flex { 
   display: flex;
+}
+.want-to-do{
+  margin-top: 10px;
 }

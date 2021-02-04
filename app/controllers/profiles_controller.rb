@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :profile_params_id, except: [:index,:new, :create]
+  before_action :profile_params_id, except: [:index,:new, :create,]
   
   def index
     @profiles = Profile.order("created_at DESC")
@@ -65,6 +65,7 @@ class ProfilesController < ApplicationController
       render :edit
     end
   end
+
   private
 
   def profile_params

@@ -1,15 +1,17 @@
+<%= render "shared/header" %>
+
 <h1>DM</h1>
 
 <h4>参加者</h4>
 <% @entries.each do |e| %>
-  <h5><strong><a href="/profiles/:id/edit/<%= e.user.id %>"><%= e.user.nickname%>さん</a></strong></h5>
+  <h5><strong><%= e.user.nickname%>さん</a></strong></h5>
 <% end %>
 
 <hr>
 <% if @messages.present? %>
   <% @messages.each do |m| %>
     <strong><%= m.content %></strong>
-    <small>by <strong><a href="/profiles/:id/<%= m.user_id %>"><%= m.user.nickname %>さん</a></strong></small>
+    <small>by <strong><%= m.user.nickname %>さん</a></strong></small>
     <hr>
   <% end %>
 <% else %>
@@ -24,3 +26,5 @@
 <% end %>
 
 <%= link_to "ユーザー一覧に戻る", root_path %>
+
+<%= render "shared/footer" %>

@@ -55,6 +55,10 @@
               <h3 class='profile-name'>
                 <%= profile.profession_name %> 
               </h3>
+              <h2 class='want-to-do'>【今後やりたいこと】</h2>
+              <h3 class='profile-name'>
+                <%= profile.want_to_do %> 
+              </h3>
             </div>
           </div>
           <% end %>
@@ -88,8 +92,8 @@
   <%# /商品一覧 %>
 </div>
   <%= link_to( new_profile_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>登録する</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <span class='purchase-btn-text'>登録は<br>こちら</span>
+  <%= image_tag 'plus.png' , class: "purchase-btn-icon" %>
 <% end %>
 
 <%= render "shared/footer" %>
