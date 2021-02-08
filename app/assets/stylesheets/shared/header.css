@@ -4,9 +4,10 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 5vw;
+  padding: 3vh 6vw 2vh;
   position: fixed;
   background-color: #fff;
+  z-index: 100;
 }
 
 .search-bar-contents {

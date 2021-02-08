@@ -3,16 +3,12 @@
 <%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
-      <%= @profile.user.nickname %>
-    </h2>
     <div class='item-img-content'>
       <%= image_tag @profile.image, class:"item-box-img" %>
     </div>
-    <div class="item-price-box">
-      <span class="item-price">
-        <%= @profile.form.name %>
-      </span>
+      <h3 class="name">
+        <%= @profile.user.nickname %>
+      </h3>
       <span class="item-postage">
        <%= @profile.profession_name %>
       </span>

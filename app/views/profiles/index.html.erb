@@ -3,40 +3,96 @@
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
-    <h2 class='service-title'>
-      選択肢が広がるマッチングアプリ
+    <h2 class='service-title text-center'>
+    Conect and Spread <br>
+      <span class='catchcopy_ja'>つながって、ひろがる。</span>
     </h2>
-    <p class='service-explain'>
-      UNIONはだれでもかんたんに繋がれる
-    </p>
-    <p class='service-explain'>
-      マッチングアプリです。
-    </p>
-    <p class='service-explain'>
-      雇用形態にかかわらず、
-    </p>
-    <p class='service-explain'>
-      自分のやりたいことを叶えることで
-    </p>
-    <p class='service-explain'>
-      人生は豊かになります。
-    </p>
-    <p class='service-explain'>
-      まずは、
-    </p>
-    <p class='service-explain'>
-      あなたのやりたいことを叶えるために
-    </p>
-    <p class='service-explain'>
-      選択肢から広げてみませんか？
-    </p>
+    
   </div>
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
 
   <%# プロフィール一覧 %>
+  <div class='content_box text-center'>
+    <h3>Concept</h3>
+    <p class="subtitle">UNIONについて</p>
+    <p class='service-explain'>
+        What do you have skills ?<br>
+
+        あなたはどんなスキルをお持ちですか？<br>
+
+        <br>
+        UNIONは誰でも簡単に繋がれる<br>
+      
+        スキルシェアアプリです。<br>
+        <br>
+        雇用形態にかかわらず、<br>
+
+        スキルを簡単にシェアしたり、<br>
+      
+        必要なスキルを持っている人とすぐに繋がれます。<br>
+    </p>
+    </div>
+    <div class='content_box'>
+      <h3 class="text-center">skill share</h3>
+      <p class= 'subtitle  text-center'>スキルシェア実例</p>
+      <div class="case-box">
+        <p class="case01">Case01</p>
+        <p class="case-example">トレーナーAさん<span class="mark01"></span>フォトグラファーBさん</p>
+      </div>
+      <ul class="human-list">
+        <li>
+        <p class="human-name">トレーナーAさん</p>
+        <div class="about-human">
+          <p class="human-image"><%= image_tag "photographer.jpg", class: "img-picture" %></p>
+          <div class="human-detail_box">
+            <dl class="human-detail">
+              <dt class="detail-title">【職業】</dt>
+              <dd class="detail-detail">パーソナルトレーナー</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【職歴】</dt>
+              <dd class="detail-detail">15年</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【スキル】</dt>
+              <dd class="detail-detail">ボディメイク、栄養管理・知識</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【求めていたスキル】</dt>
+              <dd class="detail-detail">トレーニング風景を撮影してくれるカメラマン。</dd>
+            </dl>
+          </div>        
+        </div>
+        </li>
+        <li>
+        <p class="human-name">フォトグラファーBさん</p>
+        <div class="about-human">
+          <p class="human-image"><%= image_tag "photographer.jpg", class: "img-picture" %></p>
+          <div class="human-detail_box">
+            <dl class="human-detail">
+              <dt class="detail-title">【職業】</dt>
+              <dd class="detail-detail">フリーランスカメラマン</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【職歴】</dt>
+              <dd class="detail-detail">5年</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【スキル】</dt>
+              <dd class="detail-detail">写真撮影、映像制作</dd>
+            </dl>
+            <dl class="human-detail">
+              <dt class="detail-title">【求めていたスキル】</dt>
+              <dd class="detail-detail">モデルになってくれる方。WEB制作のできる方。</dd>
+            </dl>
+          </div>        
+        </div>
+        </li>
+      </ul>
+    </div>
   <div class='profile-contents'>
-    <h2 class='title'>UNION WORKE</h2>
-    <%= link_to '新規投稿プロフィール', "#", class: "subtitle" %>
+    <h3 class='title'>UNION WORKE</h3>
+    <p class= 'subtitle'>新規投稿プロフィール</p>
     <ul class='profile-lists'>
 
     <% if @profiles[0] != nil %> 

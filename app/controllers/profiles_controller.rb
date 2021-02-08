@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :profile_params_id, except: [:index,:new, :create,]
+  before_action :profile_params_id, except: [:index,:new, :create]
   
   def index
     @profiles = Profile.order("created_at DESC")
@@ -20,7 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    if @profile.user == current_user
+    if @profile.user.id == current_user.id
+    
        @profile.destroy
     end
       redirect_to root_path
