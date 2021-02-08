@@ -67,7 +67,7 @@
         <li>
         <p class="human-name">フォトグラファーBさん</p>
         <div class="about-human">
-          <p class="human-image"><%= image_tag "photographer.jpg", class: "img-picture" %></p>
+          <p class="human-image"><%= image_tag "trainer01.jpg", class: "img-picture" %></p>
           <div class="human-detail_box">
             <dl class="human-detail">
               <dt class="detail-title">【職業】</dt>
@@ -108,16 +108,17 @@
               <h3 class='profile-name'>
                 <%= profile.user.nickname %> 
               </h3>
-              <h3 class='profile-name'>
+              <h2 class='profile-list'>【職業】</h2>
+              <h3 class='profile-profession-name'>
                 <%= profile.profession_name %> 
               </h3>
-              <h2 class='want-to-do'>【今後やりたいこと】</h2>
-              <h3 class='profile-name'>
-                <%= profile.want_to_do %> 
-              </h3>
-              <h2 class='can-do-list'>【あなたに出来ること】</h2>
-              <h3 class='profile-name'>
+              <h2 class='profile-list'>【スキル】</h2>
+              <h3 class='profile-can-do-list'>
                 <%= profile.can_do_list %> 
+              </h3>
+              <h2 class='profile-list'>【求めていたスキル】</h2>
+              <h3 class='profile-want-to-do'>
+                <%= profile.want_to_do %> 
               </h3>
             </div>
           </div>
@@ -130,13 +131,11 @@
       <li class='list'>
       
         <%= link_to '#' do %>
-        <%= image_tag 'union_logo.png', class: "profile-img" %>
+        <%= image_tag 'union02.png', class: "profile-img" %>
         <div class='profile-info'>
           <h3 class='profile-name'>
-            商品を出品してね！
+            プロフィール登録してね！
           </h3>
-          <div class='profile-price'>
-            <span>99999999円<br>(税込み)</span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
