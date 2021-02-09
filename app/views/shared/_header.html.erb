@@ -2,12 +2,15 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("union02.png", class:"union-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
+    <div id="nav-search">
+        <%= form_tag '/', :method => 'get' do %>
+            <p>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "検索", :name => nil %>
+            </p>
+        <% end %>
+    </div><!-- nav-search -->
+    
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout" %></li>

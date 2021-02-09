@@ -104,6 +104,7 @@
             <div class='profile-img-content'>
               <%= image_tag profile.image, class: "profile-img" %>
             </div>
+
             <div class='profile-info'>
               <h3 class='profile-name'>
                 <%= profile.user.nickname %> 
@@ -116,11 +117,13 @@
               <h3 class='profile-can-do-list'>
                 <%= profile.can_do_list %> 
               </h3>
+
               <h2 class='profile-list'>【求めていたスキル】</h2>
               <h3 class='profile-want-to-do'>
                 <%= profile.want_to_do %> 
               </h3>
             </div>
+            
           </div>
           <% end %>
         </li>
