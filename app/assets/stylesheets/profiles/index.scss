@@ -6,11 +6,15 @@ a {
   background: #f8f8f8;
 }
 
+.text-center{
+  text-align: center;
+}
+
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
   height: 100vh;
-  background-image: image-url('back_image.jpeg');
+  background-image: image-url('union.main2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -23,8 +27,27 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
+.content_box{
+  width: 80%;
+  margin: 80px auto 120px;
+}
+
+.content_box h3{
+  font-size: 80px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  
+}
+
 .service-title {
-  font-size: 8vh;
+  font-size: 80px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.catchcopy_ja{
+  display: block;
+  font-size: 36px;
 }
 
 .service-explain {
@@ -56,12 +79,121 @@ a {
   font-weight: bold;
 }
 
-.profile-contents>.subtitle {
+.subtitle {
   font-size: 3vh;
   margin: 4vh 0 10vh;
   text-decoration: none;
   color: darkgray;
   font-weight: bold;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.subtitle:before, .subtitle:after {
+  border-top:1px solid;
+  content: "";
+  width: 3rem;
+}
+
+.subtitle:before{
+  margin-right: 1em;
+}
+
+.subtitle:after{
+  margin-left: 1em;
+}
+
+.case-box{
+  margin: 0 auto;
+}
+.case01{
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.case-example{
+  position: relative;
+  width: 100%;
+  background-color: darkkhaki;
+  font-size: 24px;
+  letter-spacing:0.2rem;
+  padding: 15px 20px;
+  color: #f7f7f7;
+  text-align: center;
+}
+
+/*----------------------------
+-----------------------------------バツマーク
+---------------------------------------------------------------------*/
+
+
+.mark01::before,
+.mark01::after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6%;
+	height: 6%;
+	background: #E91E63;
+}
+.mark01::before {
+	transform: rotate(-45deg);
+}
+.mark01::after {
+	transform: rotate(45deg);
+}
+/*----------------------------
+-----------------------------------///バツマーク
+---------------------------------------------------------------------*/
+
+.human-list{
+  width: 90%;
+  margin: 60px auto 48px;
+}
+
+.about-human{
+  display: flex;
+}
+
+.human-image{
+  width: 40%;
+}
+
+.human-name{
+  font-size: 24px;
+  color: green;
+  margin-bottom: 48px;
+}
+
+.human-list li{
+  margin: 56px 0;
+}
+
+.human-detail{
+  margin-bottom: 18px;
+}
+
+.human-image{
+  width: 50%;
+}
+
+.img-picture{
+  width: 100%;
+}
+
+.human-detail_box{
+  width: 45%;
+  margin-left: 5%;
+}
+
+.detail-title{
+  width: 60%;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .profile-lists {
@@ -74,6 +206,7 @@ a {
   width: 75vh;
   padding: 1vw;
   background-color: #FFF;
+  margin-bottom: 48px;
 }
 
 
@@ -87,30 +220,23 @@ a {
   height: 33vh;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
-
 
 .profile-info {
+  margin-left: 30px;
   background-color: #FFF;
   color: black;
   padding: 1vw;
 }
 
 .profile-name {
-  font-size: 2.5vh;
+  font-size: 3.5vh;
+}
+
+.profile-list {
+  font-size: 2vh;
+  font-weight: bolder;
+  margin-top:15px;
+  margin-bottom: 5px;
 }
 
 .profile-price {

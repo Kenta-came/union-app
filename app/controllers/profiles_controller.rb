@@ -1,9 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :profile_params_id, except: [:index,:new, :create,]
+  before_action :profile_params_id, except: [:index,:new, :create]
   
   def index
-    @profiles = Profile.order("created_at DESC")
+    @profiles = Profile.search(params[:search])
   end
 
   def new
@@ -20,7 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    if @profile.user == current_user
+    if @profile.user.id == current_user.id
+    
        @profile.destroy
     end
       redirect_to root_path
@@ -69,7 +70,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:gender_id, :form_id, :profession_name, :want_to_do, :can_do_list, :image,).merge(user_id: current_user.id)
+    params.require(:profile).permit(:gender_id, :form_id, :profession_name, :want_to_do, :can_do_list, :image).merge(user_id: current_user.id)
   end
 
   def profile_params_id
