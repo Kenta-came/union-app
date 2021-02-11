@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   
   def index
     @profiles = Profile.search(params[:search])
+    @profiles = Profile.order("created_at DESC")
   end
 
   def new
@@ -27,11 +28,12 @@ class ProfilesController < ApplicationController
       redirect_to root_path
   end
 
+
   def show
+    @profile=Profile.find(params[:id])
     @currentUserEntry=Entry.where(user_id: current_user.id)
     @userEntry=Entry.where(user_id: @profile.user.id)
-    if @profile.user.id == current_user.id
-    else
+    @profile.user.id == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id then
@@ -45,8 +47,9 @@ class ProfilesController < ApplicationController
         @room = Room.new
         @entry = Entry.new
       end
-    end
   end
+
+
 
 
   

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :profiles
   resources :messages, only: [:create]
   resources :rooms, only: [:create,:show]
+
+
 end
