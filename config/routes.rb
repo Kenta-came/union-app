@@ -4,8 +4,5 @@ Rails.application.routes.draw do
   resources :rooms, only: [:create, :show, :index]
   resources :users, only: [:index,:show]
   root to: 'users#index'
-  
-
-
-
+  resources :relationships
 end
