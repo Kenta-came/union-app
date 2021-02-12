@@ -7,5 +7,5 @@ class Form < ActiveHash::Base
     { id: 5, name: '企業' }
   ]
   include ActiveHash::Associations 
-  has_many :profiles
+  has_many :users
 end
