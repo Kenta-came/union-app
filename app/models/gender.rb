@@ -6,5 +6,5 @@ class Gender < ActiveHash::Base
     { id: 4, name: 'その他' }
   ]
   include ActiveHash::Associations 
-  has_many :profiles
+  has_many :users
   end

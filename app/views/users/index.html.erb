@@ -95,32 +95,32 @@
     <p class= 'subtitle'>新規投稿プロフィール</p>
     <ul class='profile-lists'>
 
-    <% if @profiles[0] != nil %> 
-      <% @profiles.each do |profile|%> 
+    <% if @users[0] != nil %> 
+      <% @users.each do |user|%> 
         <li class='list'>
 
-          <%= link_to profile_path(profile.id), method: :get do %>
+          <%= link_to user_path(user.id), method: :get do %>
           <div class='flex'>
             <div class='profile-img-content'>
-              <%= image_tag profile.image, class: "profile-img" %>
+              <%= image_tag user.image, class: "profile-img" %>
             </div>
 
             <div class='profile-info'>
               <h3 class='profile-name'>
-                <%= profile.user.nickname %> 
+                <%= user.nickname %> 
               </h3>
               <h2 class='profile-list'>【職業】</h2>
               <h3 class='profile-profession-name'>
-                <%= profile.profession_name %> 
+                <%= user.profession_name %> 
               </h3>
               <h2 class='profile-list'>【スキル】</h2>
               <h3 class='profile-can-do-list'>
-                <%= profile.can_do_list %> 
+                <%= user.can_do_list %> 
               </h3>
 
               <h2 class='profile-list'>【求めていたスキル】</h2>
               <h3 class='profile-want-to-do'>
-                <%= profile.want_to_do %> 
+                <%= user.want_to_do %> 
               </h3>
             </div>
             
@@ -130,7 +130,7 @@
       <% end %>
     <% end %>
       
-    <% if @profiles.length == 0 %> 
+    <% if @users.length == 0 %> 
       <li class='list'>
       
         <%= link_to '#' do %>
@@ -153,9 +153,10 @@
   </div>
   <%# /商品一覧 %>
 </div>
-  <%= link_to( new_profile_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>登録は<br>こちら</span>
-  <%= image_tag 'plus.png' , class: "purchase-btn-icon" %>
-<% end %>
+
+  <%#= link_to( user_path(user_id), class: 'purchase-btn') do %>
+    <%# <span class='purchase-btn-text'>登録は<br>こちら</span>  %>
+    <%#= image_tag 'plus.png' , class: "purchase-btn-icon" %>
+  <%# end %> 
 
 <%= render "shared/footer" %>

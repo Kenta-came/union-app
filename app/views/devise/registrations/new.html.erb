@@ -60,6 +60,68 @@
                     "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
       </div>
     </div>
+
+    <div class="items-sell-main">
+    <h2 class="items-sell-title">商品の情報を入力</h2>
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"profile-image"  %>
+        
+      </div>
+    </div>
+    
+    
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      
+        <div class="weight-bold-text">
+          性別
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+
+      <div class="weight-bold-text">
+        所属
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:form_id, Form.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      
+
+
+
+
+      <div class="weight-bold-text">
+        職業
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :profession_name, class:"items-text", id:"item-name", placeholder:"職業（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          叶えたいこと、やりたいこと
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :want_to_do, class:"items-text", id:"item-info", placeholder:"叶えたいこと、やりたいことの説明（必須 1,000文字まで）（SNSでの集客、ホームページを作って欲しいなど）例）2010年頃に栃木でパーソナルジムをオープンしました。それに伴いSNSで集客を行いたいのでカメラマンの方を探しています。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          できることの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :can_do_list, class:"items-text", id:"item-info", placeholder:"食事知識、トレーニング経験ある為、ダイエットや姿勢改善をトレーニングと食事でサポートできます。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
     <div class='register-btn'>
       <%= f.submit "会員登録" ,class:"register-red-btn" %>
     </div>
