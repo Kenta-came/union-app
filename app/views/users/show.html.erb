@@ -6,6 +6,8 @@
     <div class='item-img-content'>
       <%= image_tag @user.image, class:"item-box-img" %>
     </div>
+
+
       <h3 class="name">
         <%= @user.nickname %>
       </h3>
@@ -21,7 +23,7 @@
         <%= link_to '削除', user_path(@user.id), method: :delete, class:'item-destroy' %>
       <% else %>  
         
-        <%#= link_to 'メッセージ',  item_buyers_path(@item.id), class:"item-red-btn"%>
+        <%= render "relationships/follow_button" %>
         
       <% end %>
     <% end %>
