@@ -16,65 +16,75 @@
       </span>
     </div>
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id %>
-        <%= link_to 'プロフィールの編集', "/users/edit", method: :get, class: "item-red-btn" %>
-        <p class='or-text'>or</p>
-        <%= link_to '削除', user_path(@user.id), method: :delete, class:'item-destroy' %>
-      <% else %>  
-        
-        <%= render "relationships/follow_button" %>
-        
-      <% end %>
-    <% end %>
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-
-    <% if @user.id == current_user.id %>
-      
-    <% else %>
-      <% if @isRoom == true %>
-        <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
-      <% else %>
-        <%= form_for @room do |f| %>
-          <%= fields_for @entry do |e| %>
-            <%= e.hidden_field :user_id, :value=> @user.id %>
-          <% end %>
-          <%= f.submit "チャットを始める" %>
+    <div class="plofile">
+      <% if user_signed_in? %>
+        <% if current_user.id == @user.id %>
+          <%= link_to 'プロフィールの編集', "/users/edit", method: :get, class: "item-red-btn" %>
+          <p class='or-text'>or</p>
+          <%= link_to '削除', user_path(@user.id), method: :delete, class:'item-destroy' %>
+        <% else %>  
+          <div class= "btn" data-id = <%= @user.id %> data-check=<%= @user.followed %>>
+            <%= render "relationships/follow_button",user: @user%>
+          </div>
         <% end %>
       <% end %>
-    <% end %>
+      <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
-    <div class="item-explain-box">
-      <span><%#= @profile.detail %></span>
+    
+
+    
+
+
+
+      <% if @user.id == current_user.id %>
+      <% else %>
+        <% if @isRoom == true %>
+          <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, :value=> @user.id %>
+            <% end %>
+            <%= f.submit "チャットを始める" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
+
+
+      <div class="item-explain-box">
+        <span><%#= @profile.detail %></span>
+      </div>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-item">出品者</th>
+            <td class="detail-value"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">性別</th>
+            <td class="detail-value"><%= @user.gender.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">所属</th>
+            <td class="detail-value"><%= @user.form.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">職業</th>
+            <td class="detail-value"><%= @user.profession_name %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">やりたいこと</th>
+            <td class="detail-value"><%= @user.want_to_do %></td>
+          </tr>
+          <tr>
+            <th class="detail-item">できること</th>
+            <td class="detail-value"><%= @user.can_do_list %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @user.nickname %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">性別</th>
-          <td class="detail-value"><%= @user.gender.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">所属</th>
-          <td class="detail-value"><%= @user.form.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">職業</th>
-          <td class="detail-value"><%= @user.profession_name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">やりたいこと</th>
-          <td class="detail-value"><%= @user.want_to_do %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">できること</th>
-          <td class="detail-value"><%= @user.can_do_list %></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
   <%# /商品の概要 %>
 
