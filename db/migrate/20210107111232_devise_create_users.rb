@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :profession_name,    null: false
       t.string :want_to_do,         null: false
       t.string :can_do_list,        null: false
-
+      t.boolean :followed
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

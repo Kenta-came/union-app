@@ -13,15 +13,17 @@
     <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></strong></small>
     <hr>
   <% end %>
+  <div id="message_list">
+  </div>
 <% else %>
   <h3 class="text-center">メッセージはまだありません</h3>
 <% end %>
 
 <%= form_for @message do |f| %>
-  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70, id: "content" %>
   <%= f.hidden_field :room_id, :value => @room.id %>
   <br>
-  <%= f.submit "投稿する" %>
+  <%= f.submit "送信する" , id: "message_up"%>
 <% end %>
 
 <%= link_to "ユーザー一覧に戻る", root_path %>

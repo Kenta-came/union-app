@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_024805) do
     t.string "profession_name", null: false
     t.string "want_to_do", null: false
     t.string "can_do_list", null: false
+    t.boolean "followed"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
